@@ -26,10 +26,9 @@
   <entry>
     <title>Java基础(Basic)</title>
     <url>/2019/12/04/undefined.html</url>
-    <content><![CDATA[<p><strong>引言</strong><br>博主是计算机学记者,建立博客只是为了系统化得整理一下知识,如果有写的不好的地方还挺各位大佬多多理解!</p>
-<hr>
- <a id="more"></a>
-<h2 id="java标识符"><a href="#java标识符" class="headerlink" title="java标识符"></a>java标识符</h2><p>java中的标识符组成:数组 字母,下划线,$美元符<br>java中大小写敏感,没有长度限制,不可以使用数字开头</p>
+    <content><![CDATA[<p><strong>说明</strong><br>博主是计算机学记者,会尽力根据自己的理解和各位写一遍好文章,如果有写的不好的地方还挺各位大佬多多担待,因为现在是还没搞评论系统,但是会尽快搞一个!<br> <a id="more"></a></p>
+<h2 id="java标识符"><a href="#java标识符" class="headerlink" title="java标识符"></a>java标识符</h2><p>java中的标识符组成:数组 字母,下划线,$美元符<br>java中大小写敏感,没有长度限制,不可以使用数字开头  </p>
+<p><strong>方法名:</strong><code>首字母小写,其他首字母大写</code><br><strong>常量名:</strong><code>全字母大写,用_连接</code><br><strong>变量名:</strong><code>首字母小写,后面的首字母大写,其他首字母小写</code><br><strong>包名:</strong><code>全部小写字母</code><br><strong>提示:定义标识符需要做到见名知意,其他语言同样如此</strong></p>
 <h3 id="java基本语法"><a href="#java基本语法" class="headerlink" title="java基本语法:"></a>java基本语法:</h3><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello_Demo</span> </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">		  System.out.println(<span class="string">"Hello,World!"</span>);<span class="comment">//输出语句</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">      <span class="keyword">int</span> a = <span class="keyword">new</span> Scanner(System.in).nextInt();<span class="comment">//输入语句</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">	  &#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
 <h2 id="java基本数据类型"><a href="#java基本数据类型" class="headerlink" title="java基本数据类型"></a>java基本数据类型</h2><p>数据类型分类：<strong>基本数据类型</strong>(8种) 和 <strong>引用数据类型</strong>  </p>
 <table border="1">
@@ -71,6 +70,10 @@
         <td>true - false</td><td>真?假</td>
      </tr>
 </table>  
+<code>变量无初始值会报错(类实例化时成员变量初始化0,false,null)
+混合型计算,结果为最大数值类型
+转义字符：\b \n \e \t \\、\uXXXX \XXX等
+小心数据溢出，程序不会报错，浮点型计算产生的舍入误差</code>
 
 <h2 id="java基本语法-1"><a href="#java基本语法-1" class="headerlink" title="java基本语法"></a>java基本语法</h2><ol>
 <li>while循环 </li>
@@ -91,16 +94,66 @@
 </li>
 <li><p>java5引入一种主要用于数组的增强型rot循环.</p>
 <ul>
-<li>新for循环<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> <span class="comment">// for(声明语句：表达式)&#123;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//代码句子</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// &#125;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> <span class="comment">/*</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">声明语句：声明新的局部变量，该变量的类型必须和数组元素的类型匹配。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"> 其作用域限定在循环语句块其值与此时数组元素的值相等。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">表达式：表达式是要访问的数组名，或者是返回值为数组的方法。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"> */</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">	<span class="keyword">int</span>[] numbers = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span> &#125;;</span></pre></td></tr><tr><td class="code"><pre><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> x : numbers) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">	  System.out.print(x);</span></pre></td></tr><tr><td class="code"><pre><span class="line">	  System.out.print(<span class="string">","</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">	  System.out.print(<span class="string">"\n"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">	String[] names = &#123; <span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>, <span class="string">"D"</span> &#125;;</span></pre></td></tr><tr><td class="code"><pre><span class="line">	<span class="keyword">for</span> (String name : names) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">	  System.out.print(name);</span></pre></td></tr><tr><td class="code"><pre><span class="line">	  System.out.print(<span class="string">","</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure></li>
+<li>新for循环<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> <span class="comment">// for(声明语句：表达式)&#123;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">//代码句子</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">// &#125;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> <span class="comment">/*</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">声明语句：声明新的局部变量，该变量的类型必须和数组元素的类型匹配。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"> 其作用域限定在循环语句块其值与此时数组元素的值相等。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment">表达式：表达式是要访问的数组名，或者是返回值为数组的方法。</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"> 新for仅仅是编译器认可的,编译过程中会改回原来for语句</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="comment"> */</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">	<span class="keyword">int</span>[] numbers = &#123; <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">50</span> &#125;;</span></pre></td></tr><tr><td class="code"><pre><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> x : numbers) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">	  System.out.print(x);</span></pre></td></tr><tr><td class="code"><pre><span class="line">	  System.out.print(<span class="string">","</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">	  System.out.print(<span class="string">"\n"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">	String[] names = &#123; <span class="string">"A"</span>, <span class="string">"B"</span>, <span class="string">"C"</span>, <span class="string">"D"</span> &#125;;</span></pre></td></tr><tr><td class="code"><pre><span class="line">	<span class="keyword">for</span> (String name : names) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">	  System.out.print(name);</span></pre></td></tr><tr><td class="code"><pre><span class="line">	  System.out.print(<span class="string">","</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure></li>
 </ul>
 </li>
-<li><p>break和continue</p>
+<li><p>if-else循环</p>
 <ul>
+<li>不使用大括号默认认为下一个；前的语句属于if-true分支内,效率比switch低, switch直接进入不是挨个判断<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">	<span class="comment">//输入年份判断是闰年还是平年</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">	<span class="comment">//条件被4或被400整除并且不能被100整除的为闰年</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">	<span class="comment">//否则为平年</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">	Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span></pre></td></tr><tr><td class="code"><pre><span class="line">	System.out.println(<span class="string">"请输入年份:"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">	<span class="keyword">int</span> year = scanner.nextInt();</span></pre></td></tr><tr><td class="code"><pre><span class="line">	<span class="keyword">if</span>(year%<span class="number">4</span>==<span class="number">0</span> || year%<span class="number">400</span>==<span class="number">0</span> &amp;&amp; year%<span class="number">100</span>!=<span class="number">0</span> ) &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">		System.out.println(<span class="string">"是闰年"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">	&#125;<span class="keyword">else</span> &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">		System.out.println(<span class="string">"是平年"</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>循环说明</p>
+<ul>
+<li>循环可以无限层嵌套,外层循环循环一次,内层循环循环一遍</li>
 <li>break主要用在循环语句或者switch语句中，用来跳出整个语句块.</li>
 <li>continue跳出最里面的循环，并且继续执行该循环下面的语句.</li>
 </ul>
-<h3 id="先到这吧-时间不够了-本博客页面还未完结-过后还会在进行添加"><a href="#先到这吧-时间不够了-本博客页面还未完结-过后还会在进行添加" class="headerlink" title="先到这吧,时间不够了,本博客页面还未完结,过后还会在进行添加!"></a>先到这吧,时间不够了,本博客页面还未完结,过后还会在进行添加!</h3></li>
+<h2 id="Java数组"><a href="#Java数组" class="headerlink" title="Java数组"></a>Java数组</h2><p>数组是引用数组类型,数组名即为引用<br>数组的下标是从0开始的,不是数组数据的长度<br><strong>数组的三种定义方式:</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"> <span class="comment">//1.声明并赋值-&gt;动态</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> arr1[] = <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">5</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">7</span>&#125;;</span></pre></td></tr><tr><td class="code"><pre><span class="line"> <span class="comment">//2.声明并赋值-&gt;静态</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> <span class="keyword">int</span> arr2[] = &#123;<span class="number">5</span>,<span class="number">8</span>,<span class="number">6</span>,<span class="number">4</span>,<span class="number">1</span>&#125;;</span></pre></td></tr><tr><td class="code"><pre><span class="line"> <span class="comment">//3.数组声明并且声明长度[8];</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"> <span class="comment">//通过数组下标给数组赋值(0,7)</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">String arr3[] = <span class="keyword">new</span> String[<span class="number">8</span>];</span></pre></td></tr><tr><td class="code"><pre><span class="line">arr3[<span class="number">0</span>] = <span class="string">"啦啦啦"</span>;</span></pre></td></tr><tr><td class="code"><pre><span class="line">arr3[<span class="number">7</span>] = <span class="string">"哈哈哈"</span>;</span></pre></td></tr></table></figure></li>
 </ol>
+<p><strong>数组的操作</strong><br><code><br>arr.length;//获取数组的长度<br>for(int s : arr.length){} //数组遍历<br>Arrays.sort(arr) //数组排序<br>Arrays.fill(arr,int val); //对数组进行填充<br>System.arraycopy(arr,0,arrs,0,arr.length); //数组复制<br>Arrays.copyOf(arr,arr.length);  //数组复制<br>Arrays.copyOf(arr,arr.length+2); //数组的扩容缩容<br></code></p>
+<h2 id="java的方法"><a href="#java的方法" class="headerlink" title="java的方法"></a>java的方法</h2><p><strong>java面向对象四大特征</strong></p>
+<div style="color:red">抽象,封装,继承,多态</div>
+
+<p><strong>static静态关键字说明</strong><br><img src="https://dazhen-1300855399.cos.ap-beijing.myqcloud.com/Java/static.png"><br><code><br>被static修饰的方法只能使用静态变量<br>被static修饰的方法只能调用静态方法<br>static修饰的变量和方法不可以用this或super<br>在类载入内存时：1实例化对象2使用类中静态成员<br>final+static定义的常量声明时赋值被使用，在编译时调用常量位置会被常量值替换，所以运行时不会加载常量所在类，提高运行效率<br></code></p>
+<h2 id="访问控制修饰"><a href="#访问控制修饰" class="headerlink" title="访问控制修饰"></a>访问控制修饰</h2><code>
+类只有两种修饰方式：默认/public
+通过访问修饰符封装类属性：
+变量设为private私有的
+编写public公有的get/set方法进行使用
+</code>
+
+<table border="1">
+    <tr>
+        <th style="text-align:center">修饰词</th>
+        <th style="text-align:center">本类</th>
+        <th style="text-align:center">同一包中的类</th>
+        <th style="text-align:center">子类</th>
+        <th style="text-align:center">其他类</th>
+    </tr>
+     <tr>
+        <td>public</td><td>可以访问</td>
+        <td>可以访问</td><td>可以访问</td>
+        <td>可以访问</td>
+     </tr>
+     <tr>
+        <td>protected</td><td>可以访问</td>
+        <td>可以访问</td><td>可以访问</td>
+        <td>不能访问</td>
+     </tr>
+       <tr>
+        <td>默认</td><td>可以访问</td>
+        <td>可以访问</td><td>不能访问</td>
+        <td>不能访问</td>
+     </tr>
+       <tr>
+        <td>private</td><td>可以访问</td>
+        <td>不能访问</td><td>不能访问</td>
+        <td>不能访问</td>
+     </tr>
+</table>
+
+<h2 id="小知识"><a href="#小知识" class="headerlink" title="小知识"></a>小知识</h2><p><strong>方法签名:</strong>指方法名和参数列表<br><strong>方法重写:</strong>指方法签名相同的方法,返回值不同,一般子类重写父类方法.<br><strong>方法重载:</strong>方法名相同,参数列表不同的方法,返回值无所谓.<br><strong>this:</strong> 每个类的每个非静态方法，都会隐含一个this关键字，它指向调用这个方法的对象；当在方法中使用本类属性时，都会隐含地使用this关键字，当然也可以明确使用。<br><strong>super:</strong>子父类存在着同名的成员时，在子类中默认时访问子类的成员，可以通过super关键字指定访问父类的成员<br>创建子类对象时，默认会先调用父类无参的构造方法，可以通过super关键字指定调用父类的构造方法</p>
 ]]></content>
       <categories>
         <category>Java开发</category>
